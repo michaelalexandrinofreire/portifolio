@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+img,nav{
+    margin: 32px;
+    
+}
+
+ul{
+    font-family: "Poppins";
+    font-size: 15;
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+}
+
+.logo{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.lenguage{
+    margin-right: 32;
+    letter-spacing: 0.1em;
+    position: absolute;
+    right: 0;
+    background-image: linear-gradient(to right, rgb(245, 245, 122), rgb(119, 247, 119));
+}
+
