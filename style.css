@@ -4,9 +4,9 @@
 }
 
 body{
-    /*background: #ff623b;*/
-    background-image: linear-gradient(to bottom, #1f1f24 60%, rgb(39, 39, 39) 70%);
+    background: #1b1b1f;
     font-family: "Poppins";
+    
 }
 
 .cabecalho{
@@ -61,7 +61,7 @@ body{
     height: 2px;
     width: 0%;
 
-    background-color: rgb(44, 139, 139);
+    background-color: #64ffda;
     transition: .4s;
 }
 
@@ -88,14 +88,14 @@ body{
 }
 
 .logo:hover{
-    background-color: rgb(44, 139, 139);
+    background-color: #64ffdb48;
     transition: .4s;
 }
 
 
 .language{
     font-family: "Poppins";
-    background-color: rgb(27, 26, 26);
+    background-color:transparent;
     color: #fff;
     width: 30px;
     height: 30px;
@@ -108,7 +108,7 @@ body{
 }
 
 .language:hover{
-    color: rgb(252, 252, 70);
+    background: linear-gradient(45deg, rgb(255, 255, 36), rgb(16, 223, 16));
 }
 
 .contactlist{
@@ -140,9 +140,9 @@ body{
 }
 
 .contactlist svg:hover{
-    color: rgb(60, 185, 185);
-    transition: .4s;
-    transform: scale(1.1);
+    transition: .2s;
+    color: #64ffda;
+    transform: translateY(-3px);
 }
 
 .email{
@@ -164,13 +164,13 @@ body{
     font-size: 12px;
     letter-spacing: 0.2em;
     writing-mode: vertical-rl;
-    font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+    font-family: 'Ubuntu', sans-serif;
 }
 
-.email a:hover{
-    transition: .4s;
-    color: rgb(44, 139, 139);
-    transform:translateY(1.1)
+.email:hover a{
+    transition: .2s;
+    color: #64ffda;
+    transform: translateY(-3px);
 }
 
 .email::after{
@@ -183,6 +183,93 @@ body{
     
 }
 
+.sectioninicio{
+    margin-top: 70px;
+    color: #ffffff;
+    padding-top: 90px;
+}
+
+.sectioninicio div{
+    display: flex;
+    justify-content:space-around;
+    margin-left: 170px;
+    margin-right: 170px;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.sectioninicio p{
+    padding: 5px;
+    width: 300px;
+    height: 130px;
+    border: solid 2px #64ffda;
+    background-color: #64ffdb10;
+    border-radius: 5px;
+}
+
+.sectionabout{
+    background: #ff623b;
+    padding-top: 100px;
+}
+
+.sectionhabilidades{
+    background-color: rgb(35, 49, 255);
+    padding-top: 100px;
+}
+
+.sectionprojetos{
+    background-color: rgb(143, 57, 255);
+    padding-top: 100px;
+}
+
+.sectionproposta{
+    background-color: #9bdacf;
+    color: #1d1d22;
+    padding-top: 130px;
+    padding-bottom: 180px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.sectionproposta h2{
+    color: #484852;
+    font-size: 16px;
+}
+
+.sectionproposta a{
+    font-size: 60px;
+    color: #1b1b1f;
+}
+
+.sectionproposta a:hover{
+    transition: .2s;
+    transform:scale(1.1)
+}
+
+.tituloproposta{
+    padding-bottom: 50px;
+}
+
+.textoproposta a::after{
+    bottom: 0;
+    left: 0;
+    position: absolute;
+
+    content: "";
+    height: 2px;
+    width: 0%;
+
+    background-color: #181a19;
+    transition: .4s;
+}
+
+.textoproposta a:hover::after, li.active::after{
+    width: 100%;
+
+}
+
 footer{
     display: flex;
     align-items: center;
@@ -191,20 +278,26 @@ footer{
     background-color: #fff;
     color: rgb(80, 80, 80);
     height: 50px;
-    align-items: center;
     padding-left: 50px;
 }
 
-img{
-    width: 20px;
-    height: 20px;
-}
-
-.logos-footer{
+.contactlogosfooter{
     display: flex;
     right: 0;
     position:absolute;
     gap: 8px;
     padding-right: 50px;
+    list-style: none;
 }
 
+.contactlogosfooter svg{
+    width: 20px;
+    height: 20px;
+    color: #000000;
+}
+
+.contactlogosfooter svg:hover{
+    transition: .2s;
+    color: #3db69c;
+    transform:scale(1.1)
+}
