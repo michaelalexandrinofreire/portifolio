@@ -1,12 +1,27 @@
+:root{
+    --bg-color: #0e141b;
+    --paddingsections: 100px 240px;;
+    --color-destaque: #64ffda;
+}
+
 *{
     margin: 0;
     box-sizing: border-box;
 }
 
 body{
-    background: #1b1b1f;
+    background: var(--bg-color);
     font-family: "Poppins";
     
+}
+/*efeito faadein*/
+@keyframes fadein {
+    from {opacity: 0.5;}
+    to {opacity: 2s;}
+}
+
+body{
+    animation: fadein 3s;
 }
 
 .cabecalho{
@@ -14,7 +29,15 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 50px;
+    padding: 0px 40px;
+
+    position:fixed;
+    width: 100%;
+    height: 80px;
+    background-color: #0e141b49;
+    backdrop-filter: blur(10px);
+    transition: all 0.25s cubic-bezier(0.645,0.045,0.355,1);
+
 }
 
 .menu{
@@ -22,9 +45,9 @@ body{
     display: flex;
 }
 
-.menu-list ,a{
+.menulist ,a{
     letter-spacing: 1.5px;
-    color: #fff;
+    color: #ffffff;
     font-size: 12;
     display: flex;
     list-style: none;
@@ -34,7 +57,7 @@ body{
     
 }
 
-.menu-list li{
+.menulist li{
     display: flex;
     flex-direction: column;
     -webkit-box-align: center;
@@ -45,14 +68,13 @@ body{
 }
 
 /* criando as tabs*/
-.menu-list li{
-    background: transparent;
+.menulist li{
     padding: 16px;
     outline: none;
     position: relative;
 }
 
-.menu-list li::after{
+.menulist li::after{
     bottom: 0;
     left: 0;
     position: absolute;
@@ -65,31 +87,32 @@ body{
     transition: .4s;
 }
 
-.menu-list li:hover::after, li.active::after{
+.menulist li:hover::after, li.active::after{
     width: 100%;
 }
 
 .logo{
     font-family: 'Mr Dafoe', cursive;
     content: " ";
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2.8rem;
+    height: 2.8rem;
     letter-spacing: 2px;
-    line-height: 2.8rem;
+    line-height: 2.4rem;
     text-align: center;
     left: 40;
     border: 3px solid;
     border-radius: 50%;
     position:fixed;
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 0;
     padding-bottom: 0px;
     
 }
 
 .logo:hover{
-    background-color: #64ffdb48;
+    background-color: #ffffff48;
     transition: .4s;
+    color: #64ffda;
 }
 
 
@@ -111,119 +134,102 @@ body{
     background: linear-gradient(45deg, rgb(255, 255, 36), rgb(16, 223, 16));
 }
 
-.contactlist{
-    float: left;
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    gap: 30px;
-    position: fixed;
-    bottom: 0;
-
-}
-
-/* criando linha abaixo da lista de redes sociais*/
-.contactlist::after{
-    content: "";
-    display: block;
-    width: 1px;
-    height: 90px;
-    margin: 0px auto;
-    background-color: #ffffff;
-}
-
-.contactlist svg{
-    
-    width: 20px;
-    height: 20px;
-    color: #fff;
-}
-
-.contactlist svg:hover{
-    transition: .2s;
-    color: #64ffda;
-    transform: translateY(-3px);
-}
-
-.email{
-    display: flex;
-    flex-direction: column;
-    -webkit-box-align: center;
-    align-items: center;
-
-    position: fixed;
-    bottom: 0px;
-    left: auto;
-    right: 40px;
-    z-index: 10;
-}
-
-.email a{
-    margin: 20px auto;
-    text-transform: lowercase;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    writing-mode: vertical-rl;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-.email:hover a{
-    transition: .2s;
-    color: #64ffda;
-    transform: translateY(-3px);
-}
-
-.email::after{
-    content: "";
-    display: block;
-    width: 1px;
-    height: 40px;
-    margin: 0px auto;
-    background-color: white;
-    
-}
-
 .sectioninicio{
-    margin-top: 70px;
-    color: #ffffff;
-    padding-top: 90px;
+    padding: var(--paddingsections);
+    padding-bottom: 128px;
+    transition: #000000 1ms;
 }
 
-.sectioninicio div{
-    display: flex;
-    justify-content:space-around;
-    margin-left: 170px;
-    margin-right: 170px;
-    align-items: center;
-    padding-bottom: 30px;
+.sectioninicio h1{
+    font-size: 19px;
+    padding-top: 150px;
+    color: #64ffda;
+    font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+.sectioninicio h2{
+    color: #e3fffb;
+    font-size: 60px;
+}
+/*efeito de escrita*/
+.sectioninicio h2::after{
+    content: '|';
+    margin-left: 5px;
+    animation: blink .8s infinite;
+}
+@keyframes blink{
+    0%{opacity: 1;}
+    100%{opacity: 0;}
 }
 
-.sectioninicio p{
-    padding: 5px;
-    width: 300px;
-    height: 130px;
-    border: solid 2px #64ffda;
-    background-color: #64ffdb10;
-    border-radius: 5px;
+.sectioninicio h3{
+    font-size: 30px;
+    color: #a0ccc3;
+    font-size: clamp(20px, 8vw, 20px);
 }
 
 .sectionabout{
-    background: #ff623b;
-    padding-top: 100px;
+    padding: var(--paddingsections);
+}
+
+.sectionabout h2{
+    padding-bottom: 20px;
+    color: var(--color-destaque);
+}
+
+.aboutbutton{
+    padding-top: 20px;
+    gap: 10px;
+    display: flex;
+}
+
+.aboutbutton button{
+    gap: 5px;
+    align-items: center;
+    padding: 5px;
+    display: flex;
+    border-radius: 1rem;
+    background-color: transparent;
+    color: #a0ccc3;
+}
+
+.aboutbutton button:nth-child(1){
+    border-color: rgb(247, 81, 247);
+}
+
+.aboutbutton button:nth-child(2){
+    border-color: rgb(127, 127, 228);
+}
+
+.aboutbutton button:hover{
+    background-color: #d0ece718;
+}
+
+.aboutbutton button img, svg{
+    display:inline;
+    color: #a0ccc3;
+    width: 20px;
+    
+}
+
+.sobremim{
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    text-align: justify;
+    color: #f5fdfc;
+    font-size: 16px;
 }
 
 .sectionhabilidades{
-    background-color: rgb(35, 49, 255);
-    padding-top: 100px;
+    background-color: #1544c0;
 }
 
 .sectionprojetos{
-    background-color: rgb(143, 57, 255);
-    padding-top: 100px;
+    
 }
 
 .sectionproposta{
-    background-color: #9bdacf;
+    background-color: #d0ece7;
     color: #1d1d22;
     padding-top: 130px;
     padding-bottom: 180px;
@@ -234,7 +240,7 @@ body{
 }
 
 .sectionproposta h2{
-    color: #484852;
+    color: #6d6d7a;
     font-size: 16px;
 }
 
@@ -243,13 +249,16 @@ body{
     color: #1b1b1f;
 }
 
-.sectionproposta a:hover{
-    transition: .2s;
-    transform:scale(1.1)
+.tituloproposta{
+    padding-bottom: 10px;
+    padding-top: 30px;
 }
 
-.tituloproposta{
-    padding-bottom: 50px;
+.textoproposta a{
+    background: transparent;
+    padding: 10px;
+    outline: none;
+    position: relative;
 }
 
 .textoproposta a::after{
@@ -261,13 +270,12 @@ body{
     height: 2px;
     width: 0%;
 
-    background-color: #181a19;
+    background-color: #1d1d22;
     transition: .4s;
 }
 
 .textoproposta a:hover::after, li.active::after{
     width: 100%;
-
 }
 
 footer{
@@ -275,13 +283,13 @@ footer{
     align-items: center;
     font-size: 11px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #fff;
-    color: rgb(80, 80, 80);
+    background-color: #f2fffd;
     height: 50px;
     padding-left: 50px;
 }
 
 .contactlogosfooter{
+    color: #1d1d22;
     display: flex;
     right: 0;
     position:absolute;
@@ -293,11 +301,11 @@ footer{
 .contactlogosfooter svg{
     width: 20px;
     height: 20px;
-    color: #000000;
+    color: #1d1d22;
 }
 
 .contactlogosfooter svg:hover{
     transition: .2s;
-    color: #3db69c;
+    color: #64ffda;
     transform:scale(1.1)
 }
